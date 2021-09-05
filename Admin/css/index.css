@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Carousal Css  */
+.carousal_slider{
+    position: relative;
+    width: 100%;
+    height: 330px;
+}
+.carousal_items{
+    position: relative;
+    width: 100%;
+}
+.carousal_slide{
+    width: 100%;
+    position: absolute;
+    transition: opacity .5s ease;
+}
+
+.carousal_slider img{
+    width: 100%;
+    height: 330px;
+}
+
+.indicators{
+    position:absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indication{
+    background-color: rgba(228, 225, 225,0.8);
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.bg_change{
+    background: white;
+}
+
+
+/* Carousal Information Box Css  */
+
+.carousal_slider .information{
+    position: absolute;
+    background: white;
+    /* line-height: 9px; */
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+}
+.carousal_slider .information ul{
+    margin: 0%;
+    padding: 0%;
+}
+.carousal_slider .information > ul li{
+    padding: .3rem 1.8rem .3rem .7rem;
+}
+.carousal_slider .information > ul li:hover{
+    background: rgb(206, 202, 202);
+}

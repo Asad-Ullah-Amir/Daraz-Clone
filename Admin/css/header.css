@@ -1,0 +1,93 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.head_pic--container{
+    background: #E2E2E2;
+    width: 100%;
+}
+.daraz_img{
+    width: 94%;
+}
+
+.fixed{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0%;
+    background-color: white;
+}
+.ctrl-height{
+    transition: position .3s ease;
+}
+.logo_img{
+    height: 80px;
+}
+
+
+.search_bar{
+    width: 100%;
+}
+.input_style{
+    width: 100%;
+    position: absolute;
+    border: none;
+    outline: none;
+    background-color: #F5F5F5;
+    padding: 0 .8rem;
+    height: 45px;
+}
+.search_btn{
+    position: absolute;
+    height: 45px;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(197, 130, 6);
+    padding: 0 1rem;
+    line-height: 45px;
+}
+.search_btn:hover{
+    color: white;
+}
+.login_img:hover{
+    filter: invert(50%);
+    cursor: pointer;
+}
+.font_a{
+    font-size: 30px;
+}
+.hidden_verification li{
+    margin: 0 .4rem;
+}
+.hidden_verification li a{
+    font-size: .8rem;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+/* Media query */
+@media screen and (max-width:750px){
+ .search_btn,.input_style{
+     height: 30px;
+ }   
+ .search_btn{
+     line-height: 30px;
+ }
+ .font_a{
+     font-size: 20px;
+ }
+ .login_img{
+     height: 30px;
+ }
+}
