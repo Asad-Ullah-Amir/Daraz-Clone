@@ -11,9 +11,9 @@
         <!-- Daraz Navigation -->
         <div class="row ctrl-height py-2" id="Observe">
 
-            <div class="col-md-2 d-flex justify-content-around">
-                <img class="logo_img d-md-block d-none" src="./images/logo.png" alt="">
-                <h2 class="d-md-none d-block">Daraz Shop</h2>
+            <div class="col-md-2 d-flex text-center">
+                <a href="#"><img class="logo_img d-md-block d-none" src="./images/logo.png" alt=""></a>
+                <h2 class="d-md-none d-block text-center">Daraz Shop</h2>
                 <div class="d-sm-none d-block">
                     <ul class="d-flex hidden_verification" style="list-style: none;">
                         <li><a href="#">Sign Up</a></li>
@@ -31,9 +31,15 @@
 
             <div class="col-3 d-sm-flex d-none align-items-md-center">
                 <div class="nav_icons pt-md-3 d-flex align-items-center" style="width: 100%;">
-                    <img src="./images/signin.png" class="login_img ms-md-3 ms-2" height="35px" alt="">
-                    <i class="fas fa-heart ms-md-4 ms-3 font_a"></i>
-                    <i class="fas fa-cart-plus ms-md-4 ms-3 font_a"></i>
+                    <div class="position-relative cont">
+                         <img src="./images/signin.png" class="login_img ms-md-3 ms-2" height="35px" alt="">
+                        <div class="hidden position-absolute" id="show_nav" style="z-index: 1001;">
+                            <a href="#">Sign In</a>
+                            <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-dark" id="heart"><i class="fas fa-heart ms-md-4 ms-3 font_a"></i></a>
+                    <a href="#" class="text-dark"><i class="fas fa-cart-plus ms-md-4 ms-3 font_a"></i></a>
                 </div>
             </div>
 

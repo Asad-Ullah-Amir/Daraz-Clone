@@ -3,13 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root{
+    --back:#F5F5F5;
+}
 
 /* Carousal Css  */
 .carousal_slider{
     position: relative;
     width: 100%;
-    height: 330px;
+    height: 360px;
 }
 .carousal_items{
     position: relative;
@@ -23,7 +25,7 @@
 
 .carousal_slider img{
     width: 100%;
-    height: 330px;
+    height: 360px;
 }
 
 .indicators{
@@ -65,4 +67,245 @@
 }
 .carousal_slider .information > ul li:hover{
     background: rgb(206, 202, 202);
+}
+
+
+
+
+/* Main Content Css */
+/* section 1 css  */
+.section_1{
+    padding: 1rem 0;
+    background-color: var(--back);
+}
+.fashion_menu{
+    padding: .2rem 1rem;
+    border-radius: 10rem;
+    background-color: white;
+    position: relative;
+}
+.fashion_menu .right_arrow{
+    position: absolute;
+    right: 4%;
+    top: 30%;
+    display: none;
+}
+.fashion_menu:hover{
+    box-shadow: .2rem .2rem 1rem rgb(168, 159, 159);
+}
+.fashion_menu:hover .right_arrow{
+    display: block;
+    color: rgb(156, 156, 6);
+}
+.fashion_menu img{
+    height: 40px;
+}
+
+
+
+/* section 2 css  */
+.section_2{
+    background-color: var(--back);
+    padding: 0 2rem;
+}
+.section_2 .container-fluid{
+    background-color: white;
+}
+.row_1{
+    border-bottom: .3px solid rgb(204, 195, 195);
+    margin-bottom: .5rem;
+    background-color: white;
+}
+.row_1 .time_box{
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    align-self: center;
+    display: inline-block;
+    padding: .6rem 1rem;
+    background-color: #C58206;
+}
+.row_1 .btn_custom{
+    border: .8px solid #C58206;
+}
+.row_1 .btn_custom:hover{
+    background-color: #C58206;
+}
+
+.row_2{
+    background-color: white;
+}
+.dynamic > *{
+    padding: 0 0rem !important;
+}
+.dynamic > * a > .card{
+    border-radius: 0 !important;
+    border: none !important;
+    
+}
+.row_2 > * a > .card .card-body{
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0% !important;
+}
+
+.row_2 > *:hover{
+    box-shadow: .1rem .1rem .9rem rgb(214, 203, 203);
+}
+
+
+
+/* Section 3 css  */
+
+.section_3{
+    background-color: var(--back);
+    padding: 1rem 2rem;
+}
+.section_3 .container-fluid{
+    background-color: white;
+}
+.section_3 .container-fluid .row .col-3{
+    padding: 1rem 0;
+}
+.section_3 .container-fluid .col-3:hover{
+    box-shadow: .1rem .1rem .8rem rgb(170, 163, 163);
+}
+.section_3 .container-fluid .col-3 .collection_images img{
+    width: 33%;
+}
+.section_3 .container-fluid .col-3 .img_first img{
+    width: 100%;
+}
+
+.bord_right{
+    border-right: .2px solid rgb(207, 196, 196);
+}
+.bord{
+    border-bottom: .2px solid rgb(207, 196, 196);
+
+}
+
+.section_3 .col-3 a{
+    text-decoration: none;
+}
+.collection_content span{
+    font-size: .8rem;
+    color: black;
+}
+
+
+
+
+
+
+
+/* Section 4 Css  */
+
+.section_4{
+    background-color: var(--back);
+    padding: 1rem 2rem;
+}
+.section_4 .container-fluid{
+    background-color: white;
+}
+.section_4 .col-2{
+    padding: 1rem !important;
+}
+.section_4 .col-2 a div p{
+    margin-bottom: 0% !important;
+}
+.section_4 .col-2:hover{
+    box-shadow: .1rem .1rem .8rem rgb(170, 163, 163);
+}
+
+
+
+
+/* Section 5 Css  */
+.section_5{
+    background-color: var(--back);
+    padding: 1rem 2rem;
+}
+.section_5 .container-fluid{
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries  */
+
+@media screen and (max-width:768px){
+    .scroll_handle{
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+    }
+    .scroll_handle > *{
+        width: 200px !important;
+    }
+    
+}
+
+@media screen and (max-width:700px){
+    .carousal_slider{
+        height: 270px;
+    }
+    .carousal_slider img{
+        height: 270px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .row_1 .time_box{
+        padding: .2rem .4rem;
+        font-size: .9rem;
+    }
+    .carousal_slider{
+        height: 150px;
+    }
+    .carousal_slider img{
+        height: 150px;
+    }
+    .c_color{
+        background-color:#C58206;
+    }
+    .c_color .time_box{
+        background-color: white;
+        color: black;
+    }
+}
+
+
+@media screen and (max-width:1000px){
+    #dynamic_2{
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        
+    }
+    #dynamic_2 > *{
+        width: 200px !important;
+    }
 }

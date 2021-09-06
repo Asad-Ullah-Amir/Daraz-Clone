@@ -60,6 +60,29 @@
 .font_a{
     font-size: 30px;
 }
+.hidden{
+    left: 100%;
+    transform: translateX(-60%);
+    align-items: center;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0%;
+    display: none;
+}
+.cont:hover .hidden{
+    display: flex;
+}
+.hidden a{
+    text-decoration: none;
+    color: black;
+    padding: .5rem .9rem;
+    width: 100%;
+}
+.hidden a:hover{
+    background-color: rgb(226, 216, 216);
+}
 .hidden_verification li{
     margin: 0 .4rem;
 }
