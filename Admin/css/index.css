@@ -138,7 +138,7 @@
 .dynamic > *{
     padding: 0 0rem !important;
 }
-.dynamic > * a > .card{
+.dynamic > * .card{
     border-radius: 0 !important;
     border: none !important;
     
@@ -149,9 +149,6 @@
     padding: 0% !important;
 }
 
-.row_2 > *:hover{
-    box-shadow: .1rem .1rem .9rem rgb(214, 203, 203);
-}
 
 
 
@@ -229,7 +226,20 @@
 .section_5 .container-fluid{
     background-color: white;
 }
+.section_5 .container-fluid .row > * .card{
+    border: none !important;
+}
 
+/* .section_5 .col-lg-2:hover{
+    box-shadow: .1rem .1rem .9rem rgb(214, 203, 203);
+} */
+
+
+
+
+.container-fluid .row > .parent_hover a:hover{
+    text-decoration: underline !important;
+}
 
 
 
@@ -258,26 +268,6 @@
 
 /* Media Queries  */
 
-@media screen and (max-width:768px){
-    .scroll_handle{
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-    }
-    .scroll_handle > *{
-        width: 200px !important;
-    }
-    
-}
-
-@media screen and (max-width:700px){
-    .carousal_slider{
-        height: 270px;
-    }
-    .carousal_slider img{
-        height: 270px;
-    }
-}
-
 @media screen and (max-width:500px){
     .row_1 .time_box{
         padding: .2rem .4rem;
@@ -296,7 +286,31 @@
         background-color: white;
         color: black;
     }
+    .section_2,.section_3,.section_4,.section_5{
+        padding: 0 .8rem;
+    }
 }
+
+@media screen and (max-width:768px){
+    .scroll_handle{
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+    }
+    .scroll_handle > *{
+        width: 160px !important;
+    }
+    
+}
+
+@media screen and (max-width:700px){
+    .carousal_slider{
+        height: 270px;
+    }
+    .carousal_slider img{
+        height: 270px;
+    }
+}
+
 
 
 @media screen and (max-width:1000px){
@@ -306,6 +320,6 @@
         
     }
     #dynamic_2 > *{
-        width: 200px !important;
+        width: 180px !important;
     }
 }

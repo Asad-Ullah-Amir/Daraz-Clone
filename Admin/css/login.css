@@ -1,0 +1,37 @@
+    .text,
+    select {
+      width: 95%;
+      padding: 5px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .pass,
+    select {
+      width: 95%;
+      padding: 5px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .responsive{
+        padding: 5rem 7rem;
+    }
+
+    .responsive a{
+      text-decoration: none;
+      color: rgb(143, 137, 137);
+      
+    }
+
+
+    @media screen and (max-width:830px){
+        .responsive{
+            padding: 3rem 3rem;
+        }
+    }

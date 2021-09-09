@@ -1,16 +1,17 @@
 // IntersectionObserver Api 
+// Sticking navbar 
 let targt = document.querySelector('#to_hide');
 let value = '-5px';
 let options = {
     rootMargin: value
 };
-let observer = new IntersectionObserver(function (entries, objserve) {
+let observer = new IntersectionObserver(function (entries, observe) {
     entries.forEach(element => {
         let to_hide = document.querySelector('#Observe');
         let target = element.target;
         if (element.isIntersecting) {
             to_hide.classList.remove('fixed');
-            
+
         }
         else {
             to_hide.classList.add('fixed');
@@ -18,6 +19,27 @@ let observer = new IntersectionObserver(function (entries, objserve) {
     });
 }, options);
 observer.observe(targt);
+
+// Navbar Category 
+let carousal_slider = document.querySelector('.carousal_slider');
+if (carousal_slider) {
+
+    let options1 = {
+        rootMargin: '-80px'
+    }
+    let contain = document.querySelector('.contain');
+    let observer1 = new IntersectionObserver(function (entires, observe) {
+        entires.forEach(element => {
+            if (element.isIntersecting) {
+                contain.style.display = 'none';
+            } else {
+                contain.style.display = 'block';
+            }
+        })
+    }, options1);
+    observer1.observe(carousal_slider);
+}
+
 
 
 
@@ -39,8 +61,8 @@ setInterval(() => {
 
 
 
-Array.from(indicators).forEach((element,index) => {
-    element.addEventListener('mouseover',(e)=>{
+Array.from(indicators).forEach((element, index) => {
+    element.addEventListener('mouseover', (e) => {
         for (let i = 0; i < carousal_items.length; i++) {
             carousal_items[i].style.opacity = 0;
             indicators[i].classList.remove('bg_change');
@@ -50,6 +72,3 @@ Array.from(indicators).forEach((element,index) => {
         current = index;
     })
 });
-
-
-

@@ -1,34 +1,41 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
-footer{
-    background-color: #2E2E54;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+footer {
+    background-color: #2e2e54;
     color: white;
     padding: 1rem 0 2.3rem 0;
 }
-.first_footer_sec > h3{
+.first_footer_sec > h3 {
     font-size: 1.3rem;
     font-weight: 500;
 }
-.first_footer_sec > p{
+.first_footer_sec > p {
     line-height: 4px;
-    font-size: .75rem;
+    font-size: 0.75rem;
 }
 
-.second_footer_sec > h3{
+.second_footer_sec > h3 {
     font-size: 1.3rem;
     font-weight: 500;
-    
 }
 
-.second_footer_sec > p{
+.second_footer_sec > p {
     line-height: 4px;
-    font-size: .75rem;
+    font-size: 0.75rem;
 }
 
-
-.line>p{
+.line > p {
     line-height: 4px;
 }

@@ -1,0 +1,31 @@
+.jumbotron{
+    background-color: rgb(245, 239, 239);
+    border-radius: 2px;
+    
+}
+.items_container .row > * {
+    position: relative;
+}
+.items_container .row .card{
+    border: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    .category_items{
+        font-size: .7rem !important;
+    }
+}
