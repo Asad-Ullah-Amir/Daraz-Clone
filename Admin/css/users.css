@@ -1,0 +1,29 @@
+.btn_space button{
+    margin-left: .3rem;
+    padding: 0 .2rem !important;
+}
+
+.user_wrapper{
+    font-size: .9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:710px){
+    .user_wrapper{
+        overflow-x: auto;
+    }
+    .user_wrapper table{
+        width: 600px;
+    }
+}

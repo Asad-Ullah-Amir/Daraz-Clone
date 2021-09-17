@@ -51,34 +51,9 @@
         </div>
     </footer>
 
-    <script src="./Admin/js/all.min.js"></script>
-    <script src="./Admin/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let boxes = document.querySelector('#timer').querySelector('.ms-4').children;
-        let box_arr = Array.from(boxes);
-        let get_m = 'Sept';
-        let get_d = '8';
-        let get_y = '2021';
-        let get_h = '23:00:00';
-        let sale_time = new Date(`${get_m} ${get_d},${get_y} ${get_h}`).getTime();
-        console.log(sale_time);
-        
-        setInterval(() => {
-            let now = new Date().getTime();
-            if (sale_time > now) {
-                let distance = sale_time - now;
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                box_arr[0].innerHTML = hours < 10 ? '0' + hours : hours;
-                box_arr[1].innerHTML = minutes < 10 ? '0' + minutes : minutes;
-                box_arr[2].innerHTML = seconds < 10 ? '0' + seconds : seconds;
-            } else {
-                console.log('problem');
-            }
-        }, 1000);
-        console.log(50 % 150);
-    </script>
-<script src="./Admin/js/index.js"></script>
-</body>
-</html>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    </body>
+
+    </html>

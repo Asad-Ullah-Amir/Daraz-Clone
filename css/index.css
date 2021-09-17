@@ -57,13 +57,38 @@
     font-size: .8rem;
     display: flex;
     flex-direction: column;
+    width: 15%;
 }
 .carousal_slider .information ul{
     margin: 0%;
     padding: 0%;
+    width: 100%;
 }
 .carousal_slider .information > ul li{
     padding: .3rem 1.8rem .3rem .7rem;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.carousal_slider .information > ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+.carousal_slider .information > ul li .sub_category_list{
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+    top: 0;
+    left: 100%;
+    width: inherit;
+}
+.carousal_slider .information > ul li .sub_category_list li{
+    padding: .3rem 1rem;
+}
+.carousal_slider .information > ul li:hover .sub_category_list{
+    display: block;
 }
 .carousal_slider .information > ul li:hover{
     background: rgb(206, 202, 202);
@@ -161,6 +186,9 @@
 .section_3 .container-fluid{
     background-color: white;
 }
+.section_3 .container-fluid .row * > .card{
+    border: none !important;
+}
 .section_3 .container-fluid .row .col-3{
     padding: 1rem 0;
 }
@@ -241,8 +269,19 @@
     text-decoration: underline !important;
 }
 
+.container-fluid .card{
+    font-size: .8rem;
+}
+/* .container-fluid .card p{
+    line-height: 15px;
+} */
+.container-fluid .card p a:hover{
+    text-decoration: none !important;
+}
 
-
+.container-fluid .card .card-body{
+    padding: .2rem 0 .1rem .1rem;
+}
 
 
 
@@ -268,6 +307,93 @@
 
 /* Media Queries  */
 
+@media screen and (max-width:1500px){
+    .carousal_slider .information{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:1170px){
+    .carousal_slider .information{
+        width: 18%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    /* #dynamic_2{
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        
+    }
+    #dynamic_2 > *{
+        width: 180px !important;
+    } */
+    .carousal_slider .information{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:956px){
+    .carousal_slider .information{
+        width: 24%;
+    }
+    
+}
+
+@media screen and (max-width:799px){
+    .carousal_slider .information{
+        width: 28%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .scroll_handle{
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+    }
+    .scroll_handle > *{
+        width: 140px !important;
+    }
+    
+}
+
+@media screen and (max-width:710px){
+    .carousal_slider .information ul li{
+        /* width: 28%; */
+        padding: .2rem .8rem !important;
+        font-size: .76rem;
+
+    }
+}
+
+
+
+@media screen and (max-width:700px){
+    .carousal_slider{
+        height: 270px;
+    }
+    .carousal_slider img{
+        height: 270px;
+    }
+}
+
+@media screen and (max-width:635px){
+    .carousal_slider .information{
+        width: 30%;
+    }
+    .container-fluid .card .card-body{
+        padding: .2rem 0 .1rem .1rem;
+        font-size: .7rem;
+    }
+    .section_4 .row .col-2{
+        padding: .7rem 0 !important;
+    }
+    
+}
+
+
+
+
 @media screen and (max-width:500px){
     .row_1 .time_box{
         padding: .2rem .4rem;
@@ -282,44 +408,14 @@
     .c_color{
         background-color:#C58206;
     }
+    .white_cl{
+        color: white;
+    }
     .c_color .time_box{
         background-color: white;
         color: black;
     }
     .section_2,.section_3,.section_4,.section_5{
         padding: 0 .8rem;
-    }
-}
-
-@media screen and (max-width:768px){
-    .scroll_handle{
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-    }
-    .scroll_handle > *{
-        width: 160px !important;
-    }
-    
-}
-
-@media screen and (max-width:700px){
-    .carousal_slider{
-        height: 270px;
-    }
-    .carousal_slider img{
-        height: 270px;
-    }
-}
-
-
-
-@media screen and (max-width:1000px){
-    #dynamic_2{
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        
-    }
-    #dynamic_2 > *{
-        width: 180px !important;
     }
 }

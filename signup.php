@@ -27,7 +27,7 @@
 
   <div class="container-fluid responsive" style="background-color: #EFF0F5;">
 
-    <div class="container">
+    <div class="container sign_up_contain">
       <div class="row">
         <div class="col-sm-6">
           <h4>Create Your Daraz Account</h4>
@@ -41,9 +41,8 @@
 
 
 
-    <div class="container">
-
-      <div class="card">
+    <div class="container-fluid">
+      <div class="card card_contain">
         <div class="card-body">
           <div class="row">
             <div class="col-sm-6">

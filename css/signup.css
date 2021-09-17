@@ -16,3 +16,22 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  .card_contain{
+    padding: 1rem;
+  }
+
+  @media screen and (max-width:863px){
+    .responsive{
+      padding: 2rem 0 !important;
+    }
+  }
+
+  @media screen and (max-width:770px){
+    .sign_up_contain{
+      font-size: .7rem !important;
+    }
+    .sign_up_contain h4{
+      font-size: 1.1rem;
+    }
+  }

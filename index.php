@@ -38,17 +38,39 @@
 
     <div class="information ms-md-5 d-sm-block d-none">
         <ul style="list-style: none;">
-            <li>Electronic Devices</li>
-            <li>Electronic Accessories</li>
-            <li>TV & Home Appliances</li>
-            <li>Health & Beauty</li>
-            <li>Babies & Toys</li>
-            <li>Groceries & Pets</li>
-            <li>Groceries & Pets</li>
-            <li>Home & Lifestyle</li>
-            <li>Women's Fashion</li>
-            <li>Watches, Bags, Jewelery</li>
-            <li>Sports & Outdoor</li>
+            <li>
+                <a href="#">Electronic Devices</a>
+                <div class="sub_category_list">
+                    <ul>
+                        <li><a href="#">Electronic Accessories sub</a></li>
+                        <li><a href="#">Electronic Accessories sub 2</a></li>
+                        <li><a href="#">Electronic Accessories sub 3</a></li>
+                        <li><a href="#">Electronic Accessories sub 4</a></li>
+                        <li><a href="#">Electronic Accessories sub 5</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Electronic Accessories</a>
+                <div class="sub_category_list">
+                    <ul>
+                        <li><a href="#">Electronic Accessories sub</a></li>
+                        <li><a href="#">Electronic Accessories sub 2</a></li>
+                        <li><a href="#">Electronic Accessories sub 3</a></li>
+                        <li><a href="#">Electronic Accessories sub 4</a></li>
+                        <li><a href="#">Electronic Accessories sub 5</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">TV & Home Appliances</a></li>
+            <li><a href="#">Health & Beauty</a></li>
+            <li><a href="#">Babies & Toys</a></li>
+            <li><a href="#">Groceries & Pets</a></li>
+            <li><a href="#">Groceries & Pets</a></li>
+            <li><a href="#">Home & Lifestyle</a></li>
+            <li><a href="#">Women's Fashion</a></li>
+            <li><a href="#">Watches, Bags, Jewelery</a></li>
+            <li><a href="#">Sports & Outdoor</a></li>
         </ul>
     </div>
 </div>
@@ -97,7 +119,7 @@
             <div class="col-md-6 col-sm-8 d-flex justify-content-center align-items-center c_color pt-sm-0 pt-3" id="timer">
                 <div class="d-flex align-items-baseline">
 
-                    <p>Ending in</p>
+                    <p class="white_cl">Ending in</p>
                     <div class="ms-4">
                         <span class="time_box">10</span>
                         <span class="time_box">10</span>
@@ -105,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 d-md-block d-none text-end">
+            <div class="col-md-4 d-md-flex justify-content-end d-none text-end pe-4">
                 <button class="btn btn_custom d-md-block d-none">SHOP MORE</button>
             </div>
         </div>
@@ -113,26 +135,30 @@
             <script>
                 let row = document.querySelector('.row_2');
                 for (let i = 0; i < 6; i++) {
-                    row.innerHTML += `<div class="col-lg-2 col-md-3 col-sm-4 col-6 parent_hover">
+                    row.innerHTML += `<div class="col-md-2 col-sm-3 col-4 mt-sm-0 mt-3 parent_hover">
                         <div class="card mx-2">
-                            <img src="./images/card${i+1}.jpg" class="card-img-top" alt="">
+                            <a href="product.php"><img src="./images/card${i+1}.jpg" class="card-img-top" alt=""></a>
                             <div class="card-body">
                                 <p class="card-title">
                                 <a href="#" style="text-decoration:none; color:black;">
                                 Azam Sons special Door and... 
                                 </a>
                                 </p>
-                                <p class="card-text" style="color:#C58206; font-size:1.1rem">
+                                <p class="card-text" style="color:#C58206;">
                                 Rs.200
                                 </p>
                             </div>
                         </div>
                         <div class="child_hover">
-                            <div class="center">
-                                <i class="fas fa-heart custom_icon"></i>
-                                <i class="fas fa-cart-plus custom_icon"></i>
-                            </div>
-                        </div>
+                                        <div class="center d-flex justify-content-center">
+                                                <div>
+                                                    <a href="#"><i class="fas fa-heart custom_icon"></i></a>
+                                                </div>
+                                                <div>
+                                                    <a href="#"><i class="fas fa-cart-plus custom_icon"></i></a>
+                                                </div>
+                                                </div>
+                                    </div>
                     </div>`;
                 }
             </script>
@@ -141,122 +167,93 @@
 </section>
 
 
-<!-- Collection Section -->
+<!-- Popular Products Section -->
 <section class="section_3">
     <div class="d-flex justify-content-between px-1 align-items-center">
-        <h3>Collections</h3>
+        <h3>Popular Poducts</h3>
         <a href="collections.php" style="text-decoration: none;">SHOP MORE <i class="fas fa-angle-right right_arrow"></i></a>
     </div>
     <div class="container-fluid">
-        <div class="items_contains row scroll_handle">
-            <div class="col-3 bord bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
+        <div class="row most_popular">
+            <script>
+                let html = '';
+                for (let i = 0; i < 12; i++) {
+                    html += `    <div class="col-md-2 col-sm-3 col-4 px-1 parent_hover">
+                <div class="card mx-2">
+                    <a href="product.php"><img src="./images/cat5.jpg" class="card-img-top" alt=""></a>
+                    <div class="card-body">
+                        <p class="card-title">
+                            <a href="product.php" style="text-decoration:none; color:black;">Azam Sons special Door and...
+                            </a>
+                        </p>
+                        <p class="card-text" style="color:#C58206;">
+                            Rs.200
+                        </p>
                     </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
+                </div>
+                <div class="child_hover">
+                    <div class="center d-flex justify-content-center">
+                        <div>
+                            <a href="#"><i class="fas fa-heart custom_icon"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fas fa-cart-plus custom_icon"></i></a>
+                        </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-3 bord bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 bord bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 bord">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 bord_right">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-3 ">
-                <a href="#" class="d-flex flex-md-column align-items-center justify-content-center flex-column-reverse">
-                    <div class="collection_content d-flex flex-column mb-md-2 align-items-center" style="width:100%">
-                        <span>Crafting Love></span>
-                        <span class="text-muted">88 Products</span>
-                    </div>
-                    <div class="collection_images d-flex flex-row align-items-baseline justify-content-around ps-4" style="width:100%">
-                        <img src="./images/coll1.jpg" alt="">
-                        <img src="./images/coll2.jpg" alt="">
-                        <img src="./images/coll3.jpg" alt="">
-                    </div>
-                </a>
-            </div>
+                </div>
+            </div>`;
+                }
+                $('.most_popular').html(html);
+            </script>
         </div>
     </div>
 </section>
-<!-- Collection Section End  -->
+<!-- Popular Products Section End  -->
+
+
+<!-- Latest Products Section -->
+<section class="section_3">
+    <div class="d-flex justify-content-between px-1 align-items-center">
+        <h3>Latest Poducts</h3>
+        <a href="collections.php" style="text-decoration: none;">SHOP MORE <i class="fas fa-angle-right right_arrow"></i></a>
+    </div>
+    <div class="container-fluid">
+        <div class="row most_latest">
+            <script>
+                let html2 = '';
+                for (let i = 0; i < 12; i++) {
+                    html2 += `    <div class="col-md-2 col-sm-3 col-4 px-1 parent_hover">
+                <div class="card mx-2">
+                    <a href="product.php"><img src="./images/cat5.jpg" class="card-img-top" alt=""></a>
+                    <div class="card-body">
+                        <p class="card-title">
+                            <a href="product.php" style="text-decoration:none; color:black;">Azam Sons special Door and...
+                            </a>
+                        </p>
+                        <p class="card-text" style="color:#C58206;">
+                            Rs.200
+                        </p>
+                    </div>
+                </div>
+                <div class="child_hover">
+                    <div class="center d-flex justify-content-center">
+                        <div>
+                            <a href="#"><i class="fas fa-heart custom_icon"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fas fa-cart-plus custom_icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+                }
+                $('.most_latest').html(html2);
+            </script>
+        </div>
+    </div>
+</section>
+<!-- Latest Products Section End  -->
+
 
 
 <!-- Categories Section -->
@@ -381,25 +378,29 @@
                 let dynamic_2 = document.querySelector('#dynamic_2');
                 for (let i = 0; i < 12; i++) {
                     console.log('woow');
-                    dynamic_2.innerHTML += `<div class="col-lg-2 parent_hover">
+                    dynamic_2.innerHTML += `<div class="col-md-2 col-sm-3 col-4 px-1 parent_hover">
                     <div class="card mx-2">
-                        <img src="./images/${i<6?'card'+(i+1)+'.jpg':'cat2.jpg'}" class="card-img-top" alt="">
+                        <a href="product.php"> <img src="./images/${i<6?'card'+(i+1)+'.jpg':'cat5.jpg'}" class="card-img-top" alt=""></a>
                         <div class="card-body">
                             <p class="card-title">
-                            <a href="#" style="text-decoration:none; color:black;">Azam Sons special Door and... 
+                            <a href="product.php" style="text-decoration:none; color:black;">Azam Sons special Door and... 
                             </a>
                             </p>
-                            <p class="card-text" style="color:#C58206; font-size:1.1rem">
+                            <p class="card-text" style="color:#C58206;">
                             Rs.200
                             </p>
                               </div>
                              </div>
                              <div class="child_hover">
-                            <div class="center">
-                                <i class="fas fa-heart custom_icon"></i>
-                                <i class="fas fa-cart-plus custom_icon"></i>
-                            </div>
-                        </div>
+                                        <div class="center d-flex justify-content-center">
+                                                <div>
+                                                    <a href="#"><i class="fas fa-heart custom_icon"></i></a>
+                                                </div>
+                                                <div>
+                                                    <a href="#"><i class="fas fa-cart-plus custom_icon"></i></a>
+                                                </div>
+                                                </div>
+                                    </div>
                             </div>`;
                 }
             </script>

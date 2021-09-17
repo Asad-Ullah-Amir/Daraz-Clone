@@ -1,0 +1,44 @@
+.whishlist_contain{
+    background-color: var(--back);
+}
+.whishlist_product a{
+    text-decoration: none;
+    color: black;
+
+}
+.whishlist_images{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    .whishlist_title{
+        font-size: .8rem;
+    }
+}
+
+
+@media screen and (max-width:700px){
+    .whishlist_title{
+        font-size: .9rem;
+    }
+    .whishlist_images{
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+    }
+}

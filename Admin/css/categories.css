@@ -1,0 +1,19 @@
+.category_table{
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    .w-50{
+        width: 100% !important;
+    }
+}

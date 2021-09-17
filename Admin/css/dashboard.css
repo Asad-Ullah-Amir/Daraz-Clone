@@ -1,0 +1,34 @@
+.items_container .items .box{
+    background-color:#C58206;
+    color: white;
+    padding: 2.7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 0 rgb(0 0 0 / 10%);
+    cursor: default;
+    text-transform: uppercase;
+}
+.items_container .items .box h2{
+    font-size: 1.47rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:680px){
+    .items_container .items .box h2{
+       font-size: 18px;
+   }
+}
+
+

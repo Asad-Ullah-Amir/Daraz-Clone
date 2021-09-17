@@ -1,0 +1,47 @@
+.parent_hover{
+    position: relative;
+}
+.child_hover{
+    width: 92%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.child_hover .center{
+    text-align: center;
+    padding: .2rem 0;
+    opacity: 0;
+    transition: all .2s ease;
+}
+.child_hover .center > div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 0 .3rem !important;
+    transition: all .2s ease;
+}
+.child_hover .center > div:hover{
+    background-color:#C58206;
+    color: white !important;
+}
+.child_hover .center > div:hover .custom_icon{
+    color: white;
+}
+.child_hover .center .custom_icon{
+    margin: 0 .3rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    color: #C58206;
+}
+.parent_hover:hover{
+    cursor: pointer;
+}
+.parent_hover:hover .child_hover .center{
+    opacity: 1;
+}

@@ -1,0 +1,112 @@
+.add_btn{
+    text-decoration: none;
+    align-self: center;
+    padding: .2rem .9rem;
+    border-radius: 1rem;
+    border: 1px solid #C58206;
+    background-color: transparent;
+    color: rgb(129, 20, 20);
+    transition: all .2s ease;
+}
+.add_btn:hover{
+    background-color: #C58206;
+    color: white;
+}
+
+.wrapper{
+    overflow-x: auto;
+    font-size: .9rem;
+}
+td a{
+    color: black;
+    font-size: .8rem;
+    color: #645b4b;
+}
+td a:hover{
+    color: #C58206;
+}
+/* .pagination{ */
+    /* justify-content: space-between; */
+/* } */
+.pagination li a{
+    color: black;
+    border-radius: 18rem !important;
+    border: .4px solid #f0ca84;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease;
+    transition-delay: .4s;
+}
+.pagination li{
+    margin: 0 .4rem;
+}
+
+.pagination li a:hover{
+    color: white;
+    background-color: #C58206;
+}
+.pagination li a:hover .hover_bubble{
+    animation: bubble .6s 1 linear;
+}
+
+.active_page{
+    background-color: #C58206;
+}
+
+.hover_bubble{
+    z-index: -1222;
+    position: absolute;
+    transition: all .7s ease;
+    transform: scale(.3);
+    top: 5px;
+    left: 9px;
+    height: 16px;
+    width: 16px;
+    opacity: 0;
+    background-color: #C58206;
+    border-radius: 100%;
+}
+
+
+@keyframes bubble {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(3);
+        opacity: 1;
+    }
+}
+
+
+.btn_submit{
+    border:.4px solid #C58206;
+    background-color: #C58206;
+    color: white;
+}
+.btn_submit:hover{
+    color: white;
+    background-color: #e4980d;
+}
+
+.ck-content{
+    min-height: 160px !important;
+}
+label{
+    margin-bottom: .7rem;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width:1040px){
+    .product_table{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width:340px){
+    .add_btn{
+        align-self: flex-start;
+    }
+}

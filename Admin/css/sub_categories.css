@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 350px){
+    .wrapper_subCategory{
+        overflow-x: auto;
+    }
+    .wrapper_subCategory table{
+        width: 370px;
+    }
+}

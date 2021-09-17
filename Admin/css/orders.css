@@ -1,0 +1,12 @@
+.p_m_none > p{
+    margin-bottom: 0;
+}
+
+.orders_wrapper{
+    overflow-x: auto;
+    font-size: .9rem;
+}
+
+.orders_wrapper table{
+    width: 900px;
+}
