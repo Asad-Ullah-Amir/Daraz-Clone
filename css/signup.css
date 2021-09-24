@@ -18,9 +18,24 @@
   }
 
   .card_contain{
-    padding: 1rem;
+    padding: 2rem;
   }
 
+  .form_alert{
+    border: .3px solid rgb(233, 226, 226);
+    border-radius: 2px;
+    padding: .4rem 1rem;
+    margin-top: .6rem;
+  }
+  .from_alert2{
+    display: none;
+  }
+  .form-text{
+    display: none;
+  }
+  .close_sign{
+    cursor: pointer;
+  }
   @media screen and (max-width:863px){
     .responsive{
       padding: 2rem 0 !important;

@@ -1,7 +1,9 @@
 <!-- Include Header -->
 <?php include "./partials/header.php"; ?>
 
-
+<?php
+$obj = new Database();
+?>
 <!-- Main Body Part -->
 
 <!-- Carousal  -->

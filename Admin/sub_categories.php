@@ -20,43 +20,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php 
+                        $obj = new Database();
+                        $obj->Select('sub_categories','*','categories ON sub_categories.cat_parent=categories.cat_id',null,'sub_cat_id DESC',4);
+                        $result = $obj->show_output();
+                        foreach ($result[0] as  $value) {
+                        ?>
                         <tr>
-                            <td>Kitchen</td>
-                            <td>Furniture</td>
-                            <td><input type="checkbox" checked /></td>
-                            <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                            <td><?php echo $value['sub_cat_title']; ?></td>
+                            <td><?php echo $value['cat_title']; ?></td>
+                            <?php 
+                            if($value['show_in_menu'] == 1){
+                                $str = "checked";
+                            }
+                            else{
+                                $str = '';
+                            }
+                            ?>
+                            <td><input data-id="<?php echo $value['sub_cat_id']; ?>" class="check_subCategory" type="checkbox" <?php echo $str; ?> /></td>
+                            <td><a href="edit_subCategory.php?id=<?php echo $value['sub_cat_id']; ?>"><i class="fas fa-edit"></i></a> | <a href="javascript:void(0)" data-id="<?php echo $value['sub_cat_id'] ?>" class="detele_sub_category"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
-                        <tr>
-                            <td>Kitchen</td>
-                            <td>Furniture</td>
-                            <td><input type="checkbox" checked /></td>
-                            <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Kitchen</td>
-                            <td>Furniture</td>
-                            <td><input type="checkbox" checked /></td>
-                            <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Kitchen</td>
-                            <td>Furniture</td>
-                            <td><input type="checkbox" checked /></td>
-                            <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Kitchen</td>
-                            <td>Furniture</td>
-                            <td><input type="checkbox" checked /></td>
-                            <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
             <!-- Pagination -->
             <div class="nav_wraper d-flex justify-content-center mt-4">
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
+                    <!-- <ul class="pagination">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <div class="hover_bubble"></div>
@@ -72,7 +63,10 @@
                                 <span aria-hidden="true">Next</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <?php 
+                    echo $obj->pagination('sub_categories','categories ON sub_categories.cat_parent=categories.cat_id',null,4);
+                    ?>
                 </nav>
             </div>
 

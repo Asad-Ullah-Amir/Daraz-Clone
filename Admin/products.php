@@ -25,72 +25,24 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $obj = new Database();
+                            $obj->Select('products','*',"categories ON products.product_cat=categories.cat_id LEFT JOIN brands ON products.product_brand=brands.brand_id",null,'product_id DESC',4);
+                            $result = $obj->show_output();
+                            foreach ($result[0] as $value) {
+                            ?>
                             <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                                <td><?php echo $value['product_code']; ?></td>
+                                <td><?php echo $value['product_title']; ?></td>
+                                <td><?php echo $value['cat_title']; ?></td>
+                                <td><?php echo $value['brand_title']; ?></td>
+                                <td><?php echo $value['product_price']; ?></td>
+                                <td><?php echo $value['qty']; ?></td>
+                                <td><img src="./uploads/<?php echo $value['featured_image']; ?>" height="60" alt=""></td>
+                                <td><?php echo $value['product_status'] == 1 ? 'Active':'NaN'; ?></td>
+                                <td><a href="edit_product.php?id=<?php echo $value['product_id']; ?>" class="edit_product"><i class="fas fa-edit"></i></a> | <a data-id="<?php echo $value['product_id']; ?>" data-image="<?php echo $value['featured_image']; ?>" class="delete_product" href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
-                            <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>PD2039</td>
-                                <td>This is description of the product from database</td>
-                                <td>Electronics</td>
-                                <td></td>
-                                <td>Rs. 200</td>
-                                <td>12</td>
-                                <td>dksjflk</td>
-                                <td>Active</td>
-                                <td><a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -99,7 +51,7 @@
             <!-- Pagination -->
             <div class="nav_wraper d-flex justify-content-center">
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
+                    <!-- <ul class="pagination">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                             <div class="hover_bubble"></div>
@@ -115,7 +67,11 @@
                                 <span aria-hidden="true">Next</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <?php 
+                    echo $obj->pagination('products',"categories ON products.product_cat=categories.cat_id LEFT JOIN brands ON products.product_brand=brands.brand_id",null,4);
+                    ?>
+
                 </nav>
             </div>
 

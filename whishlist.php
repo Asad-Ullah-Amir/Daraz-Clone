@@ -1,3 +1,10 @@
+<?php 
+// session_start();
+if(isset($_SESSION['name'])){
+    header('location: http://localhost/daraz-clone');
+}
+
+?>
 <?php include "./partials/header.php"; ?>
 
 <div class="container-fluid px-md-5 px-sm-4 px-2  whishlist_contain">

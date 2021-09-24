@@ -99,6 +99,15 @@ label{
 }
 
 
+#admin_alert{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    border-radius: .3rem;
+    padding: .8rem 1rem;
+    display: none;
+}
+
+
 @media screen and (max-width:1040px){
     .product_table{
         width: 800px;

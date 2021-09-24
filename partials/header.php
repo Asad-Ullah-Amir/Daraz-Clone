@@ -1,6 +1,16 @@
+<?php
+include "config.php";
+session_start();
+$base = basename($_SERVER['REQUEST_URI']);
+if(!isset($_SESSION['name'])){
+    if($base == 'whishlist.php' || $base == 'add_cart.php'){
+        header("location: {$url}/login.php ");
+    }
+}
+ ?>
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +48,17 @@
         <div class="row ctrl-height py-2" id="Observe">
 
             <div class="col-md-2 d-flex justify-content-center text-center">
-                <a href="index.php"><img class="logo_img d-md-block d-none" src="./images/logo.png" alt=""></a>
+                <?php 
+                $obj = new Database();
+                $obj->Select('options','site_logo');
+                $result = $obj->show_output();
+                if($result){
+                    $img = $result[0][0]['site_logo'];
+                ?>
+                <?php  }else{
+                    $img = '';
+                } ?>
+                <a href="index.php"><img class="logo_img d-md-block d-none" src="./Admin/site_logo/<?php echo $img; ?>" alt=""></a>
                 <h2 class="d-md-none d-block text-center">Daraz Shop</h2>
                 <div class="d-sm-none d-block">
                     <ul class="d-flex hidden_verification" style="list-style: none;">
@@ -57,6 +77,16 @@
 
             <div class="col-3 d-sm-flex d-none align-items-md-center">
                 <div class="nav_icons pt-md-3 d-flex align-items-center" style="width: 100%;">
+                <?php if(isset($_SESSION['username'])){ ?>
+                    <div class="position-relative cont">
+                        <button class="btn btn-primary">hello Asad <i class="fas fa-chevron-circle-down"></i></button>
+                        <div class="hidden position-absolute" id="show_nav" style="z-index: 1001;">
+                            <a href="login.php">My Profile</a>
+                            <a href="signup.php">My Orders</a>
+                            <a href="logout.php">Logout</a>
+                        </div>
+                    </div>
+                    <?php }else{ ?>
                     <div class="position-relative cont">
                         <img src="./images/signin.png" class="login_img ms-md-3 ms-2" height="35px" alt="">
                         <div class="hidden position-absolute" id="show_nav" style="z-index: 1001;">
@@ -64,6 +94,7 @@
                             <a href="signup.php">Sign Up</a>
                         </div>
                     </div>
+                    <?php } ?>
                     <a href="whishlist.php" class="text-dark" id="heart"><i class="fas fa-heart ms-md-4 ms-3 font_a"></i></a>
                     <a href="add_cart.php" class="text-dark"><i class="fas fa-cart-plus ms-md-4 ms-3 font_a"></i></a>
                 </div>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <script src="../js/all.min.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 <div class="col-6 d-lg-block d-none login_left">
                 </div>
                 <div class="col-lg-6 login_right">
-                    <form action="">
+                    <form action="" id="admin">
                         <h1 class="text-center mt-5">Log In</h1>
                         <div class="input_text mt-5">
                             <i class="fas fa-user icon"></i>
@@ -36,8 +37,11 @@
                     </form>
                 </div>
             </div>
+            <div class="mt-3 admin_alert" id="admin_alert"><div class="d-flex justify-content-between align-items-center"><p class="m-0" class="text_to" id="text_to">Please Fill all the fields!</p> <p class="m-0" id="admin_cross"><i class="fas fa-window-close" style="cursor: pointer;"> </i></p></div></div>
         </div>
     </div>
+
+    <script src="./js/actions.js"></script>
 </body>
 
 </html>

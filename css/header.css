@@ -71,6 +71,7 @@
     background-color: white;
     padding: 0%;
     display: none;
+    width: 120px;
 }
 .cont:hover .hidden{
     display: flex;

@@ -1,3 +1,13 @@
+<?php
+include "../config.php";
+session_start();
+if(!isset($_SESSION['admin'])){
+    header("location: {$url}/admin");
+}
+else{
+    $admin = $_SESSION['admin'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +31,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <script src="../js/all.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
 </head>
 
 <body>
@@ -33,18 +44,18 @@
                     </div>
                 </div>
                 <div class="col-sm-4 col-6 d-flex align-items-center justify-content-end position-relative">
-                    <p class="mb-0 mx-4 name" id="name">Hi,Asad! <i class="fas fa-chevron-circle-down name"></i></p>
+                    <p class="mb-0 mx-4 name3" id="name" style="text-transform: capitalize;">Hi,<?php echo $admin; ?>! <i class="fas fa-chevron-circle-down name3"></i></p>
                     <div class="Admin_settings" id="Admin_settings">
                         <ul>
                             <a href="change_password.php">
                                 <li class="li_show">Change Password</li>
                             </a>
-                            <a href="#">
+                            <a href="admin_logout.php">
                                 <li class="li_show">Logout</li>
                             </a>
                         </ul>
                     </div>
-                    <span id="humburger" class="d-md-none d-block"><i class="fas fa-hamburger text-white humburger"></i></span>
+                    <span id="humburger" class="d-md-none d-block"><i class="fas fa-bars text-white humburger"></i></span>
                 </div>
             </div>
         </div>

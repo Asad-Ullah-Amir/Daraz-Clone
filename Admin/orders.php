@@ -1,14 +1,14 @@
 <?php include "header.php" ?>
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row gx-5">
         <?php include "sidebar.php"; ?>
 
-        <div class="col-md-9 ps-sm-4 mb-5">
+        <div class="col-md-9 mb-5">
             <h2 class="admin_heading_m mt-4">All Orders</h2>
 
 
-            <div class="orders_wrapper">
+            <div class="orders_wrapper mt-4">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
@@ -23,111 +23,56 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php 
+                        $obj = new Database();
+                        $obj->Select('order_products','*',null,null,"order_id DESC",5);
+                        $result = $obj->show_output();
+                        if($result){
+                            foreach ($result[0] as $value) {
+                        ?>
                         <tr>
                             <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
+                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:<?php echo $value['product_qty']; ?></td>
+                            <td><?php echo $value['product_qty']; ?></td>
+                            <td><?php echo $value['total_amount']; ?></td>
                             <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
+                                <?php 
+                                $obj3 = new Database();
+                                $obj3->Select('user','f_name,l_name,mobile',null,"user_id={$value['product_user']}");
+                                $user_result = $obj3->show_output();
+                                ?>
+                                <p><b>Name</b>: <?php echo $user_result[0][0]['f_name'] ?> <?php echo $user_result[0][0]['l_name'] ?></p>
+                                <p><b>Mobile</b> : <?php echo $user_result[0][0]['mobile'] ?></p>
                             </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
+                            <td><?php echo $value['order_date']; ?></td>
+                            <?php 
+                            if($value['confirm'] == 1){
+                                $str = "Paid";
+                            }
+                            else{
+                                $str = "Pending";
+                            }
+                            ?>
+                            <td><button class="btn btn-success btn-sm"><?php echo $str; ?></button></td>
+                            <?php 
+                            if($value['delivery'] == 1){
+                                $str1 = "Completed";
+                            }
+                            else{
+                                $str1 = "Pending";
+                            }
+                            ?>
+                            
+                            <td><button class="btn btn-primary"><?php echo $str1; ?></button></td>
                         </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
-                        <tr>
-                            <td>0DR890</td>
-                            <td><b>Product</b> Code: PDR490 <b>Quantity</b>:2</td>
-                            <td>2</td>
-                            <td>Rs.200</td>
-                            <td class="p_m_none">
-                                <p><b>Name</b>: user12</p>
-                                <p><b>Address</b> : #23438</p>
-                                <p><b>City</b> : Karachi</p>
-                            </td>
-                            <td>11 Sept, 2020</td>
-                            <td><button class="btn btn-success btn-sm">Paid</button></td>
-                            <td><button class="btn btn-primary">Complete</button></td>
-                        </tr>
+                        <?php } } else{echo "NO orders found!";} ?>
                     </tbody>
                 </table>
             </div>
             <!-- Pagination -->
             <div class="nav_wraper d-flex justify-content-center mt-4">
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
+                    <!-- <ul class="pagination">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <div class="hover_bubble"></div>
@@ -143,7 +88,10 @@
                                 <span aria-hidden="true">Next</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <?php 
+                    echo $obj->pagination('order_products',null,null,5);
+                    ?>
                 </nav>
             </div>
         </div>

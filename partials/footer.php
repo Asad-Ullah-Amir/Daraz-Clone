@@ -50,10 +50,11 @@
             </div>
         </div>
     </footer>
-
+    <script src="./js/actions_handle.js"></script>
     <script src="./js/all.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./Admin/js/index1.js"></script>
     </body>
 
     </html>
