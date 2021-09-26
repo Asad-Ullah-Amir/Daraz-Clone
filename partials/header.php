@@ -36,6 +36,10 @@ if(!isset($_SESSION['name'])){
 <body>
     <div class="container-fluid">
         <!-- Daraz Head Image  -->
+        <?php 
+        $path = basename($_SERVER['PHP_SELF']);
+        if($path !== 'user_profile.php'){
+        ?>
         <div class="row" id="to_hide">
             <div class="col-lg-12 p-0">
                 <div class="d-flex justify-content-center head_pic--container">
@@ -43,7 +47,9 @@ if(!isset($_SESSION['name'])){
                 </div>
             </div>
         </div>
-
+        <?php 
+        }
+        ?>
         <!-- Daraz Navigation -->
         <div class="row ctrl-height py-2" id="Observe">
 
@@ -70,8 +76,10 @@ if(!isset($_SESSION['name'])){
 
             <div class="col-md-7 col-sm-9 d-flex mt-md-4">
                 <div class="search_bar position-relative">
-                    <input type="text" style="z-index:998;" class="input_style" placeholder="Search here">
-                    <a href="#" class="search_btn" style="z-index: 999;"><i class="fas fa-search"></i></a>
+                    <form action="search.php" id="search_query">
+                        <input name="search" type="text" style="z-index:998;" class="input_style" id="search" placeholder="Search here" minlength="1">
+                        <button type="submit" class="search_btn" style="z-index: 999; border:none; outline:none;"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
             </div>
 
@@ -79,10 +87,10 @@ if(!isset($_SESSION['name'])){
                 <div class="nav_icons pt-md-3 d-flex align-items-center" style="width: 100%;">
                 <?php if(isset($_SESSION['username'])){ ?>
                     <div class="position-relative cont">
-                        <button class="btn btn-primary">hello Asad <i class="fas fa-chevron-circle-down"></i></button>
+                        <button class="btn btn-primary user_name">Hello <?php echo $_SESSION['name']; ?> <i class="fas fa-chevron-circle-down"></i></button>
                         <div class="hidden position-absolute" id="show_nav" style="z-index: 1001;">
-                            <a href="login.php">My Profile</a>
-                            <a href="signup.php">My Orders</a>
+                            <a href="user_profile.php">My Profile</a>
+                            <!-- <a href="signup.php">My Orders</a> -->
                             <a href="logout.php">Logout</a>
                         </div>
                     </div>
@@ -95,8 +103,42 @@ if(!isset($_SESSION['name'])){
                         </div>
                     </div>
                     <?php } ?>
-                    <a href="whishlist.php" class="text-dark" id="heart"><i class="fas fa-heart ms-md-4 ms-3 font_a"></i></a>
-                    <a href="add_cart.php" class="text-dark"><i class="fas fa-cart-plus ms-md-4 ms-3 font_a"></i></a>
+                    <div class="position-relative">
+                        <?php 
+                        if(isset($_SESSION['username'])){
+                        ?>
+                        <?php 
+                        $wish_obj = new Database();
+                        $wish_obj->Select('whish_list','*',null,"user_id={$_SESSION['user_id']}");
+                        $wish_result = $wish_obj->show_output();
+                        $count = count($wish_result[0]);
+                        ?>
+                        <?php 
+                        if($count > 0){
+                        ?>
+                        <span class="position-absolute cart_wish"><?php echo $count; ?></span>
+                        <?php } ?>
+                        <?php } ?>
+                        <a href="whishlist.php" class="text-dark" id="heart"><i class="fas fa-heart ms-md-4 ms-3 font_a"></i></a>
+                    </div>
+                    <div class="position-relative">
+                    <?php 
+                        if(isset($_SESSION['username'])){
+                        ?>
+                        <?php 
+                        $cart_obj = new Database();
+                        $cart_obj->Select('add_cart','*',null,"user_id={$_SESSION['user_id']}");
+                        $cart_result = $cart_obj->show_output();
+                        $count1 = count($cart_result[0]);
+                        ?>
+                        <?php 
+                        if($count1 > 0){
+                        ?>
+                        <span class="position-absolute cart_wish"><?php echo $count1; ?></span>
+                        <?php } ?>
+                        <?php } ?>
+                        <a href="add_cart.php" class="text-dark"><i class="fas fa-cart-plus ms-md-4 ms-3 font_a"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="container-fluid px-sm-5 contain_all">
@@ -104,68 +146,37 @@ if(!isset($_SESSION['name'])){
                     <ul>
                         <li class="detect_show">Categories <i class="fas fa-angle-down arrow_handle pt-1" style="font-size: 1.2rem; font-weight:300;"></i>
                             <div class="categories_list">
+                                <?php 
+                                $obj = new Database();
+                                $obj->Select('categories','*');
+                                $result = $obj->show_output();
+                                if($result){
+                                    foreach ($result[0] as $value) {
+                                        
+                                ?>
                                 <ul>
                                     <li>
-                                        <a href="#">Electronic Devices</a>
+                                        <a href="category.php?cat_id=<?php echo $value['cat_id']; ?>"><?php echo $value['cat_title']; ?></a>
                                         <div class="sub_category_list">
+                                            <?php  
+                                            $obj3 = new Database();
+                                            $obj3->Select('sub_categories','*',null,"cat_parent={$value['cat_id']}");
+                                            $sub_cat_res = $obj3->show_output();
+                                            if($sub_cat_res){
+                                                foreach ($sub_cat_res[0] as $val) {
+                                            ?>
                                             <ul>
-                                                <li><a href="#">Electronic sub</a></li>
-                                                <li><a href="#">Electronic sub 2</a></li>
-                                                <li><a href="#">Electronic sub 3</a></li>
-                                                <li><a href="#">Electronic sub 4</a></li>
-                                                <li><a href="#">Electronic sub 5</a></li>
+                                                <li><a href="sub_category.php?sub_cat_id=<?php echo $val['sub_cat_id']; ?>"><?php echo $val['sub_cat_title']; ?></a></li>
                                             </ul>
+                                            <?php } } else{
+                                                echo "";
+                                            } ?>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">Electronic Accessories</a>
-                                        <div class="sub_category_list">
-                                            <ul>
-                                                <li><a href="#">Electronic Accessories sub</a></li>
-                                                <li><a href="#">Electronic Accessories sub 2</a></li>
-                                                <li><a href="#">Electronic Accessories sub 3</a></li>
-                                                <li><a href="#">Electronic Accessories sub 4</a></li>
-                                                <li><a href="#">Electronic Accessories sub 5</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">TV & Home Applinaces</a>
-                                        <div class="sub_category_list">
-                                            <ul>
-                                                <li><a href="#">Applinaces sub</a></li>
-                                                <li><a href="#">Applinaces sub 2</a></li>
-                                                <li><a href="#">Applinaces sub 3</a></li>
-                                                <li><a href="#">Applinaces sub 4</a></li>
-                                                <li><a href="#">Applinaces sub 5</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">Health & Beauty</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Babies & Toys</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Groceries & Pets</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Home & Lifestyle</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Women's Fashion</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Men's Fashion</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sports & Outdoor</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Watches, Bags & Jewelery</a>
                                     </li>
                                 </ul>
+                                <?php } } else{
+                                    echo "";
+                                } ?>
                             </div>
                         </li>
                         <li><a href="#"><i class="fas fa-shopping-basket"></i> d Mart</a></li>

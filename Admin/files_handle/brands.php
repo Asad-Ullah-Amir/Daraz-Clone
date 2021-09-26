@@ -9,7 +9,7 @@ if(isset($_POST['adding_brand'])){
     $b_title = htmlentities($_POST['add_title_brand'],ENT_QUOTES);
     $add_brand_cat = $_POST['add_brand_cat'];
     $obj1 = new Database();
-    $obj1->Select('brands','*',null,"brand_title LIKE '$b_title'");
+    $obj1->Select('brands','*',null,"brand_title LIKE '$b_title' AND brand_cat=$add_brand_cat");
     $res = $obj1->show_output();
     if(count($res[0]) >= 1){
         echo json_encode(array('message'=>'Brand with this name already exists!','status'=>false));
