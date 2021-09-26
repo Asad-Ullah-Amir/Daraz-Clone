@@ -164,6 +164,26 @@
     display: block; 
 }
 
+.user_name{
+    background-color:#C58206 !important;
+    border-color: #C58206 !important;
+}
+.cart_wish{
+    top:-35%;
+    right: -10%;
+    color: white;
+    font-size: .6rem;
+    background-color: #C58206;
+    border-radius: 100%;
+    padding: .1rem .4rem;
+}
+
+
+
+
+
+
+
 
 /* Media query */
 @media screen and (max-width:1080px) {

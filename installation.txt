@@ -1,0 +1,13 @@
+--- Installatin Steps ---
+
+1. Go to PhpMyAdmin and create a Database named daraz-clone.
+2. Now, import the file in your Database. (File_Path : database/Daraz-Clone-main.zip)
+3. Now, open the daraz-clone site in your browser.
+4. Type url ('localhost/daraz-clone/admin').
+   -- username : admin
+   -- password : admin 
+
+
+5. Dummy user 
+  --username : asadb@gmail.com
+  --password : 123

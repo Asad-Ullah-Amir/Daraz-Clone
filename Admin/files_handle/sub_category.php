@@ -6,7 +6,7 @@ if (isset($_POST['add_sub_cat'])) {
         $add_subCategoryParent = $_POST['add_subCategoryParent'];
         $sub_cat = htmlentities($_POST['new_subCategory'],ENT_QUOTES);
         $obj = new Database();
-        $obj->Select('sub_categories', '*', null, "sub_cat_title LIKE '$sub_cat'");
+        $obj->Select('sub_categories', '*', null, "sub_cat_title LIKE '$sub_cat' AND cat_parent=$add_subCategoryParent");
         $res = $obj->show_output();
         if (count($res[0]) >= 1) {
             echo json_encode(array('message' => 'Sub-Category with this name already exists!', 'status' => false));

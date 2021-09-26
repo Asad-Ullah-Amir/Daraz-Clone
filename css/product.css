@@ -1,7 +1,7 @@
 .single_product_image{
-    width: 100%;
+    width: 85%;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .btn_cart{
@@ -25,7 +25,9 @@
 }
 
 
-
+.ratings p{
+    font-size: .8rem;
+}
 
 
 
