@@ -2,8 +2,13 @@
 
 1. Go to PhpMyAdmin and create a Database named daraz-clone.
 2. Now, import the file in your Database. (File_Path : database/Daraz-Clone-main.zip)
+<<<<<<< HEAD
 3. Now, open the site in your browser.
 4. Type url ('localhost/sitename/admin').
+=======
+3. Now, open the daraz-clone site in your browser.
+4. Type url ('localhost/daraz-clone/admin').
+>>>>>>> f2ded1392c9984c8f2659952228b99cbc672ec9e
    -- username : admin
    -- password : admin 
 
